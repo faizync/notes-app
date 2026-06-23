@@ -1,0 +1,6 @@
+/* Global reset — Vite includes this by default, keeping it clean */
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}

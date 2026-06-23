@@ -1,0 +1,238 @@
+/* ── Reset & Base ───────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* ── App Container ──────────────────────────────────── */
+.app {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 0.82rem;
+  color: #888;
+  letter-spacing: 0.5px;
+}
+
+/* ── Error Banner ───────────────────────────────────── */
+.error-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff1f0;
+  border: 1px solid #ffccc7;
+  color: #cf1322;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+
+.error-banner button {
+  background: none;
+  border: none;
+  color: #cf1322;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0 4px;
+}
+
+/* ── Add Note Form ──────────────────────────────────── */
+.note-form {
+  background: white;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  margin-bottom: 40px;
+}
+
+.note-form h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.note-form input,
+.note-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #1a1a2e;
+  outline: none;
+  transition: border-color 0.2s;
+  margin-bottom: 12px;
+  resize: vertical;
+  display: block;
+}
+
+.note-form input:focus,
+.note-form textarea:focus {
+  border-color: #6366f1;
+}
+
+.note-form input::placeholder,
+.note-form textarea::placeholder {
+  color: #bbb;
+}
+
+.note-form button {
+  width: 100%;
+  padding: 13px;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.note-form button:hover:not(:disabled) {
+  background: #4f46e5;
+}
+
+.note-form button:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+}
+
+/* ── Notes Section ──────────────────────────────────── */
+.notes-section h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.note-count {
+  background: #6366f1;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 20px;
+}
+
+.state-message {
+  text-align: center;
+  color: #999;
+  padding: 60px 0;
+  font-size: 0.95rem;
+}
+
+/* ── Notes Grid ─────────────────────────────────────── */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 16px;
+}
+
+/* ── Note Card ──────────────────────────────────────── */
+.note-card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.note-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.note-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.delete-btn:hover:not(:disabled) {
+  background: #fff1f0;
+}
+
+.delete-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.note-content {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.note-date {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  .app {
+    padding: 24px 16px 60px;
+  }
+
+  .header h1 {
+    font-size: 1.7rem;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
